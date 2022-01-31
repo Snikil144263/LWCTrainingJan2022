@@ -1,0 +1,30 @@
+<template>    
+<div class="slds-box slds-p-around_none slds-m-top_x-small slds-m-bottom_medium slds-m-horizontal_none">
+    <lightning-layout>
+        <lightning-layout-item padding="around-small">
+            <div class="custom-box slds-box slds-p-around_medium slds-text-align_center">
+                <lightning-card title="Permanent Address" >
+                    <p class="slds-p-horizontal_small">Enter permenannt address as govt Id proof</p>
+                    <lightning-input label="Address Line 1" name="txt1"></lightning-input>
+                    <lightning-input label="Address Line 2" name="txt2"></lightning-input>
+                    <lightning-input label="Landmark" name="txt3"></lightning-input>
+                    <lightning-input label="Zipcode" name="txt4"></lightning-input>    
+                </lightning-card>     
+            </div>
+        </lightning-layout-item>
+        <lightning-layout-item padding="around-small">
+            <div class="custom-box slds-box slds-p-around_medium slds-text-align_center">
+                <lightning-card title="Current Address">
+                    <lightning-input type="checkbox" label="Same as permenant address" name="input1" onclick={handleChange}></lightning-input>
+                    <template if:true={areDetailsVisible}>
+                    </template>
+                    <lightning-input label="Address Line 1" value={line1} onclick={handleChange}></lightning-input>
+                    <lightning-input label="Address Line 2"  value={line2} onclick={handleChange}></lightning-input>
+                    <lightning-input label="Landmark"  value={lmark} onclick={handleChange}></lightning-input>
+                     <lightning-input label="Zipcode"  value={zcode} onclick={handleChange}></lightning-input>    
+                </lightning-card>   
+            </div>
+        </lightning-layout-item>
+            </lightning-layout>
+</div>
+</template>
